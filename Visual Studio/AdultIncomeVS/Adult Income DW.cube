@@ -1,0 +1,185 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f864731c-c461-4539-a2bd-47d2bdaa5b67" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Adult Income DW</ID>
+  <Name>Adult Income DW</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="bddc6a99-99e8-4270-a76c-d5b0a9686112">
+      <ID>Situation</ID>
+      <Name>Situation</Name>
+      <DimensionID>Situation</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="3d26d205-fa50-4c22-bd0a-c0832170a13d">
+          <AttributeID>Situation ID</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="1ce3e4c8-a11c-4249-9d7d-34b459669b9b">
+      <ID>Job</ID>
+      <Name>Job</Name>
+      <DimensionID>Job</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="67153f3d-c02f-44f5-8825-711d9d5071f7">
+          <AttributeID>Hours Per Week</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="c3cbfd4c-0ee8-4f73-8ae5-87a3b23edc8b">
+      <ID>Person</ID>
+      <Name>Person</Name>
+      <DimensionID>Person</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="24169eb0-6495-46bd-a4cd-062ca9b29f28">
+          <AttributeID>Age</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="ee0b1d6d-21b3-475a-a5ab-3a1f41af2bc5">
+      <ID>Count Salary</ID>
+      <Name>Count Salary</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="280f640e-0d7b-4afa-973a-4289afb6adf6">
+          <ID>Count Salary Less</ID>
+          <Name>Count Salary Less</Name>
+          <Source dwd:design-time-name="f6b20b2b-3cac-4545-9309-ffafd2f291ce">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="1c5b1c14-d695-4531-b1b0-3882fa9f91bc">
+              <TableID>dbo_FactCountSalary</TableID>
+              <ColumnID>CountSalaryLess</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a90de8e1-0313-484d-bf26-6d62be884261">
+          <ID>Count Salary Greater</ID>
+          <Name>Count Salary Greater</Name>
+          <Source dwd:design-time-name="0682a494-d7ab-4952-9cae-884665c7d09b">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="c5fce422-4c65-44f4-bb89-55ac0e3108ff">
+              <TableID>dbo_FactCountSalary</TableID>
+              <ColumnID>CountSalaryGreater</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="fa6e923d-b1ef-4dcf-a008-6db0a0b5608c">
+          <ID>Fact Count Salary Count</ID>
+          <Name>Fact Count Salary Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="16cec384-97ae-465f-9004-96134607cfc7">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="b697165e-c2b5-4806-8a18-0ad8b061afb3">
+              <TableID>dbo_FactCountSalary</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="2f5fb765-08b9-46b7-9db2-8c9175d20c12">
+          <CubeDimensionID>Situation</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="b8b53200-a3be-4f3d-95ad-9913ef283970">
+              <AttributeID>Situation ID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f520ec25-c242-4aa6-b800-63e52961e5ac">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="2177150a-7529-47ec-a3b1-6e788b262fa5">
+                    <TableID>dbo_FactCountSalary</TableID>
+                    <ColumnID>SituationID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="16ddee3d-6206-4e0c-b949-b5595e9e11ac">
+          <CubeDimensionID>Job</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="c13b86f0-9bee-41bd-b76d-ace8215f96c0">
+              <AttributeID>Hours Per Week</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1911a9bd-c56d-4b86-bc8a-b1b2f8c6104f">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6a9345b4-3790-4f5d-968f-2200be51af3a">
+                    <TableID>dbo_FactCountSalary</TableID>
+                    <ColumnID>HoursPerWeek</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b61675cf-f67b-4025-8196-0e2e16a8e0bc">
+          <CubeDimensionID>Person</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="0e08d8d2-dff8-4f15-92cf-229315cf3a79">
+              <AttributeID>Age</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="5153055b-3e01-4ac9-81c2-68f35f35876f">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="f6e53438-c47a-4415-904a-640c810e3401">
+                    <TableID>dbo_FactCountSalary</TableID>
+                    <ColumnID>Age</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="1e4baa8b-3093-4bcf-aa0b-e34ec8524ad0">
+    <DataSourceViewID>Adult Income DW</DataSourceViewID>
+  </Source>
+</Cube>
